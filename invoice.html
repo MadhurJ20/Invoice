@@ -1,0 +1,230 @@
+<head>
+    <title>Invoice</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table tr td {
+            padding: 0;
+        }
+
+        table tr td:last-child {
+            text-align: right;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .large {
+            font-size: 1.75em;
+        }
+
+        .total {
+            font-weight: bold;
+            font-size: 1.5em;
+            vertical-align: top;
+            padding-top: 25px;
+            border-top: 2px solid #ddd;
+        }
+
+        .logo-container {
+            margin: 20px 0 70px 0;
+        }
+
+        .invoice-info-container {
+            font-size: 0.875em;
+        }
+
+        .invoice-info-container td {
+            padding: 4px 0;
+        }
+
+        .StudentName {
+            font-size: 1.5em;
+            vertical-align: top;
+        }
+
+        .CompanyName {
+            font-size: 1.5em;
+            vertical-align: top;
+        }
+
+        .line-items-container {
+            margin: 70px 0;
+            font-size: 0.875em;
+        }
+
+        .line-items-container th {
+            text-align: left;
+            color: #999;
+            border-bottom: 2px solid #ddd;
+            padding: 10px 0 15px 0;
+            font-size: 0.75em;
+            text-transform: uppercase;
+        }
+
+        .line-items-container th:last-child {
+            text-align: right;
+        }
+
+        .line-items-container td {
+            padding: 15px 0;
+        }
+
+        .line-items-container tbody tr:first-child td {
+            padding-top: 25px;
+        }
+
+        .line-items-container.has-bottom-border tbody tr:last-child td {
+            padding-bottom: 25px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .line-items-container.has-bottom-border {
+            margin-bottom: 0;
+        }
+
+        .line-items-container th.heading-quantity {
+            width: 50px;
+        }
+
+        .line-items-container th.heading-price {
+            text-align: right;
+            width: 100px;
+        }
+
+        .line-items-container th.heading-subtotal {
+            width: 100px;
+        }
+
+        .footer {
+            margin-top: 100px;
+        }
+
+        .footer-thanks {
+            font-size: 1.125em;
+        }
+
+        .footer-thanks img {
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            width: 16px;
+            margin-right: 4px;
+        }
+
+        .footer-info span {
+            padding: 0 5px;
+            color: black;
+        }
+
+        .footer-info span:last-child {
+            padding-right: 0;
+        }
+
+        body {
+            font-size: 20px;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .footer-info {
+            text-align: center;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+
+        .Signature {
+            font-size: small;
+            text-align: right;
+            padding-right: 25px;
+        }
+    </style>
+</head>
+<div class="logo-container">
+    <img
+            style="display: block; margin-left: auto; margin-right: auto; height: 175px;"
+            src="assets/ACES_Logo.jpg" alt="ACES Logo"
+    />
+</div>
+<table class="invoice-info-container">
+    <tbody>
+    <tr>
+        <td class="StudentName">Name: <strong>{{StudentName}}</strong></td>
+        <td class="CompanyName">
+            <strong>Association of Computer Engineering<br>Students RMDSSOE</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>Membership ID: <strong>{{MembershipID}}</strong></td>
+        <td>Address: Warje, Pune, Maharashtra - 411058,</td>
+    </tr>
+    <tr>
+        <td>Phone: <strong> {{PhoneNumber}}</strong></td>
+        <td>Invoice Date: <strong>{{Date}}</strong></td>
+    </tr>
+    <tr>
+        <td>Email: <strong>{{EmailID}}</strong></td>
+        <td>Invoice No: <strong>{{InvoiceID}}</strong></td>
+    </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<table class="line-items-container">
+    <thead>
+    <tr>
+        <th class="heading-description">Description</th>
+        <th class="heading-subtotal">Subtotal</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <p><strong>{{ItemName}}</strong></p>
+            <p style="padding-left: 40px">{{ItemDescription}}</p>
+        </td>
+        <td class="bold">
+            <div>
+                <strong>{{Subtotal}}</strong>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr class="total">
+        <td><strong>Total</strong></td>
+        <td>
+            <div>
+                <strong>{{Total}}</strong>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="Signature">
+    <img src="assets/Signature.jpg" alt="Digitally Signed" height="125" width="125">
+    <p>Dr. Vina M. Lomte</p>
+    <p>HOD, Department of Computer Engineering</p>
+    <p>RMDSSOE, Warje</p>
+</div>
+<div class="footer">
+    <div class="footer-info">
+        Welcome to the ACES Family! We look forward to your participation in the future:)
+    </div>
+    <div class="footer-info">
+        <a href="mailto:ace22rmd@gmail.com"><img src="assets/email.png" alt="email" height="40px"></a>
+        <a href="https://linktr.ee/aces_rmdssoe"><img src="assets/website.png" alt="website" height="40px"></a>
+    </div>
+</div>
