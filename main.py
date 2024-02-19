@@ -14,6 +14,7 @@ SEBCounter = 0
 TEACounter = 0
 TEBCounter = 0
 InvoiceCounter = 0
+MembershipID = "NULL"
 
 for row in all_rows[1:10]:  # Change 10 to total number of rows in your sheet
     StudentName = row[0].value
@@ -22,7 +23,7 @@ for row in all_rows[1:10]:  # Change 10 to total number of rows in your sheet
     EmailID = row[3].value
     Date = row[4].value
     if StudentClass in {"SE A", "SE B"}:
-        ItemName = "ACES Membership Fees SE 2023-26"
+        ItemName = "ACES Membership Fees SE 2024-27"
         ItemDescription = "Membership fees for SE Students for 3 years"
         if StudentClass[3] == "A":
             SEACounter += 1
@@ -32,7 +33,7 @@ for row in all_rows[1:10]:  # Change 10 to total number of rows in your sheet
             MembershipID = "ACES/2023/SE/%s/%.3d" % (StudentClass[3], SEBCounter)
         Subtotal = 400
     elif StudentClass in {"TE A", "TE B"}:
-        ItemName = "ACES Membership Fees TE 2023-25"
+        ItemName = "ACES Membership Fees TE 2024-26"
         ItemDescription = "Membership fees for TE Students for 2 years"
         if StudentClass[3] == "A":
             TEACounter += 1
@@ -42,9 +43,8 @@ for row in all_rows[1:10]:  # Change 10 to total number of rows in your sheet
             MembershipID = "ACES/2023/TE/%s/%.3d" % (StudentClass[3], TEBCounter)
         Subtotal = 300
     else:
-        ItemName = "ACES Membership Fees 2023-24"
+        ItemName = "ACES Membership Fees 2024-25"
         ItemDescription = "Membership fees for 1 year"
-        MembershipID = "NULL"
         Subtotal = 400
     Total = Subtotal
     InvoiceCounter += 1
