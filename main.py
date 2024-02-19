@@ -16,7 +16,7 @@ TEBCounter = 0
 InvoiceCounter = 0
 MembershipID = "NULL"
 
-for row in all_rows[1:10]:  # Change 10 to total number of rows in your sheet
+for row in all_rows[1:3]:  # Change 10 to total number of rows in your sheet
     StudentName = row[0].value
     StudentClass = row[1].value
     PhoneNumber = row[2].value
